@@ -7,12 +7,16 @@ import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalDateTime;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class MultiThreadedBlockingServer implements AutoCloseable, Server {
+public class ThreadPoolBlockingServer implements AutoCloseable, Server {
     private final ServerSocket serverSocket;
+    private final ExecutorService threadPool;
 
-    public MultiThreadedBlockingServer(int port) throws IOException {
+    public ThreadPoolBlockingServer(int port, int threadCount) throws IOException {
         this.serverSocket = new ServerSocket(port);
+        this.threadPool = Executors.newFixedThreadPool(threadCount);
     }
 
     public void start() throws IOException {
@@ -41,7 +45,8 @@ public class MultiThreadedBlockingServer implements AutoCloseable, Server {
                     throw new RuntimeException(e);
                 }
             };
-            new Thread(serverThred).start();
+//            new Thread(serverThred).start();
+            threadPool.execute(serverThred);
 
         }
     }

@@ -49,6 +49,12 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{}";
+        return "Weather{" +
+                "temperature=" + temperature +
+                ", humidity=" + humidity +
+                ", iconUrl='" + iconUrl + '\'' +
+                ", description='" + description + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalDateTime;
 
-public class BlockingServer implements AutoCloseable {
+public class BlockingServer implements AutoCloseable, Server {
     private final ServerSocket serverSocket;
 
     public BlockingServer(int port) throws IOException {

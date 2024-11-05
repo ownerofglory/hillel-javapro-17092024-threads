@@ -5,3 +5,8 @@ Topic covered
 - Race condition
 - Synchronising 
 - Manager-Worker pattern
+- `volatile` keyword
+- Sync utils `Lock`, `Semaphore`, `CyclicBarrier`, `Exchanger`, `CountDownLatch`
+- `Callable<T>`, `Future<T>`
+- Executors
+- Factory pattern

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Set;
 
-public class NonBlockingServer implements AutoCloseable {
+public class NonBlockingServer implements AutoCloseable, Server {
     private ServerSocketChannel serverSocketCh;
     private Selector selector;
 
